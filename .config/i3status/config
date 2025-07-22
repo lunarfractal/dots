@@ -1,0 +1,36 @@
+general {
+        colors = true
+        interval = 5
+}
+
+order += "memory"
+order += "cpu_temperature 0"
+order += "cpu_usage"
+order += "disk /"
+order += "tztime local"
+
+#battery all {
+#        format = "%status %percentage %remaining"
+#}
+
+cpu_usage {
+	format = "%usage"
+}
+
+memory {
+        format = "%used"
+        threshold_degraded = "10%"
+        format_degraded = "MEMORY: %free"
+}
+
+disk "/" {
+        format = "%free"
+}
+
+cpu_temperature 0 {
+	format = "%degrees °C"
+}
+
+tztime local {
+        format = "%Y-%m-%d %H:%M:%S"
+}
